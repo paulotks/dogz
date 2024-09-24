@@ -28,7 +28,8 @@ const useForm = (type) => {
   }
 
   function onChange({ target }) {
-    if(error) {
+   
+    if(error) { // verifica se existe msg de erro, se existir ele valida novamente, removendo a msg de erro
       validate(target.value);
     }
     setValue(target.value);
