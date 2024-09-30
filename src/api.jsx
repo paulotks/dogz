@@ -1,13 +1,12 @@
-export const API_URL = 'https://dogsapi.origamid.dev/json'
-
+export const API_URL = "https://dogsapi.origamid.dev/json";
 
 export function TOKEN_POST(body) {
   return {
-    url: API_URL + '/jwt-auth/v1/token',
+    url: API_URL + "/jwt-auth/v1/token",
     options: {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     },
@@ -16,11 +15,11 @@ export function TOKEN_POST(body) {
 
 export function TOKEN_VALIDADE_POST(token) {
   return {
-    url: API_URL + '/jwt-auth/v1/token/validate',
+    url: API_URL + "/jwt-auth/v1/token/validate",
     options: {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Authorization: 'Bearer' + token
+        Authorization: "Bearer" + token,
       },
     },
   };
@@ -28,11 +27,11 @@ export function TOKEN_VALIDADE_POST(token) {
 
 export function USER_GET(body) {
   return {
-    url: API_URL + '/api/user',
+    url: API_URL + "/api/user",
     options: {
-      method: 'GET',
+      method: "GET",
       headers: {
-        Authorization: 'Bearer' + token
+        Authorization: "Bearer" + body,
       },
     },
   };
@@ -40,11 +39,11 @@ export function USER_GET(body) {
 
 export function USER_POST(body) {
   return {
-    url: API_URL + '/api/user',
+    url: API_URL + "/api/user",
     options: {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     },
