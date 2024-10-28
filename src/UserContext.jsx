@@ -40,13 +40,12 @@ const UserStorage = ({ children }) => {
     }
   }
 
-  const userLogOut = React.useCallback(async function () {
-    setData(null);
+  const userLogOut = React.useCallback(() => {
     setError(null);
-    setLoading(false);
+    setData(null);
     setLogin(false);
+    setLoading(false);
     window.localStorage.removeItem("token");
-    navigate("/login");
   });
 
   React.useEffect(() => {
@@ -63,14 +62,14 @@ const UserStorage = ({ children }) => {
         } catch (err) {
           userLogOut();
         } finally {
-          setLoading(true);
+          setLoading(false);
         }
       } else {
         setLogin(false);
       }
     }
     autoLogin();
-  }, [userLogOut]);
+  }, []);
 
   return (
     <UserContext.Provider
